@@ -1,0 +1,47 @@
+{
+	"branches": [
+		"main",
+		{
+			"name": "beta",
+			"prerelease": "beta"
+		}
+	],
+	"plugins": [
+		"@semantic-release/commit-analyzer",
+		"@semantic-release/release-notes-generator",
+		[
+			"@mridang/semantic-release-helm",
+			{
+				"chartPath": "charts/zitadel",
+				"helmImage": "alpine/helm:3.15.2",
+				"docsImage": "jnorwood/helm-docs:v1.14.2",
+				"ociRepo": "oci://ghcr.io/zitadel/charts",
+				"ociUsername": "GITHUB_ACTOR",
+				"ociPassword": "GITHUB_TOKEN",
+				"ociInsecure": false
+			}
+		],
+		[
+			"@semantic-release/github",
+			{
+				"successComment": false,
+				"failComment": false,
+				"assets": [
+					{
+						"path": "dist/charts/*.tgz"
+					}
+				]
+			}
+		],
+		[
+			"@semantic-release/git",
+			{
+				"message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}",
+				"assets": [
+					"charts/zitadel/Chart.yaml",
+					"charts/zitadel/README.md"
+				]
+			}
+		]
+	]
+}
