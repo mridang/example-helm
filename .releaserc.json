@@ -15,10 +15,12 @@
         "chartPath": "charts/dummy",
         "ociRepo": "oci://ghcr.io/mridang/charts",
         "ociInsecure": false,
-        "ghPages": {
-          "enabled": true,
-          "url": "https://mridang.github.io/example-helm/charts"
-        }
+		  "ghPages": {
+			  "enabled": true,
+			  "branch": "gh-pages",
+			  "dir": "charts",
+			  "url": "https://mridang.github.io/example-helm/charts"
+		  }
       }
     ],
     [
