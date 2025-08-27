@@ -1,40 +1,47 @@
 {
-	"branches": [
-		"main",
-		{ "name": "beta", "prerelease": "beta" }
-	],
-	"plugins": [
-		"@semantic-release/commit-analyzer",
-		"@semantic-release/release-notes-generator",
-		[
-			"@mridang/semantic-release-helm",
-			{
-				"chartPath": "charts/dummy",
-				"ociRepo": "oci://ghcr.io/mridang/charts",
-				"ociInsecure": false,
-				"ghPages": {
-					"enabled": true,
-					"url": "https://mridang.github.io/example-helm/charts"
-				}
-			}
-		],
-		[
-			"@semantic-release/github",
-			{
-				"successComment": false,
-				"failComment": false,
-				"assets": [{ "path": "dist/charts/*.tgz" }]
-			}
-		],
-		[
-			"@semantic-release/git",
-			{
-				"message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}",
-				"assets": [
-					"charts/dummy/Chart.yaml",
-					"charts/dummy/README.md"
-				]
-			}
+  "branches": [
+    "master",
+    {
+      "name": "beta",
+      "prerelease": "beta"
+    }
+  ],
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    [
+      "@mridang/semantic-release-helm",
+      {
+        "chartPath": "charts/dummy",
+        "ociRepo": "oci://ghcr.io/mridang/charts",
+        "ociInsecure": false,
+        "ghPages": {
+          "enabled": true,
+          "url": "https://mridang.github.io/example-helm/charts"
+        }
+      }
+    ],
+    [
+      "@semantic-release/github",
+      {
+        "successComment": false,
+        "failComment": false,
+        "assets": [
+		  {
+			"path": "dist/charts/*.tgz"
+		  }
 		]
-	]
+      }
+    ],
+    [
+      "@semantic-release/git",
+      {
+        "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}",
+        "assets": [
+          "charts/dummy/Chart.yaml",
+          "charts/dummy/README.md"
+        ]
+      }
+    ]
+  ]
 }
