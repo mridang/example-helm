@@ -1,0 +1,11 @@
+apiVersion: v1
+entries:
+  dummy:
+    - apiVersion: v2
+      name: dummy
+      version: 1.1.0
+      created: 2025-08-27T13:28:01.555Z
+      digest: 1b954993d61e6292f3afd60f7f93ce025b208a0fdef39bf9e09588eb07b4ec43
+      urls:
+        - https://mridang.github.io/example-helm/charts/dummy-1.1.0.tgz
+generated: 2025-08-27T13:28:01.555Z
