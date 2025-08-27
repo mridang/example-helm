@@ -2,5 +2,20 @@ apiVersion: v2
 name: dummy
 description: A minimal dummy chart
 type: application
-version: 1.3.0
-appVersion: 1.0.0
+version: 1.2.0
+appVersion: "1.0.0"
+icon: https://example.test/dummy.svg
+home: https://example.test/dummy
+sources:
+    - https://github.com/your-org/dummy
+keywords:
+    - demo
+    - dummy
+    - example
+maintainers:
+    -   name: Dummy Team
+        email: team@example.test
+        url: https://example.test
+kubeVersion: ">= 1.24.0-0"
+annotations:
+    org.example/category: demo
