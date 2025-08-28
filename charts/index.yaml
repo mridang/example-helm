@@ -3,6 +3,31 @@ entries:
   dummy:
     - apiVersion: v2
       name: dummy
+      version: 1.7.0
+      created: 2025-08-28T14:59:25.927Z
+      digest: 05983ce78c95c3c760577fd0c9ed9abeab9fd62f4f1bd0ca9e35f474fb1ca480
+      urls:
+        - https://mridang.github.io/example-helm/charts/dummy-1.7.0.tgz
+      description: A minimal dummy chart
+      type: application
+      appVersion: 1.0.0
+      icon: https://example.test/dummy.svg
+      home: https://example.test/dummy
+      sources:
+        - https://github.com/your-org/dummy
+      keywords:
+        - demo
+        - dummy
+        - example
+      maintainers:
+        - name: Dummy Team
+          email: team@example.test
+          url: https://example.test
+      kubeVersion: ">= 1.24.0-0"
+      annotations:
+        org.example/category: demo
+    - apiVersion: v2
+      name: dummy
       version: 1.6.0
       created: 2025-08-28T14:45:34.690Z
       digest: f79fe365e2ef442bbbda94a0d9683d9749fa5c0020c3d270d563476f9f4ffa33
@@ -122,4 +147,4 @@ entries:
       digest: 1b954993d61e6292f3afd60f7f93ce025b208a0fdef39bf9e09588eb07b4ec43
       urls:
         - https://mridang.github.io/example-helm/charts/dummy-1.1.0.tgz
-generated: 2025-08-28T14:45:34.690Z
+generated: 2025-08-28T14:59:25.927Z
