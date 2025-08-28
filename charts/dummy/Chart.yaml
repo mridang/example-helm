@@ -2,7 +2,7 @@ apiVersion: v2
 name: dummy
 description: A minimal dummy chart
 type: application
-version: 1.3.2
+version: 1.4.0
 appVersion: 1.0.0
 icon: https://example.test/dummy.svg
 home: https://example.test/dummy
