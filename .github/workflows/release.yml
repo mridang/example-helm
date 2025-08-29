@@ -2,7 +2,8 @@ name: Release
 
 on:
   push:
-    branches: [master, beta]
+    branches:
+      - master
 
 permissions:
   contents: write
@@ -10,29 +11,25 @@ permissions:
   id-token: write
   checks: read
 
+defaults:
+  run:
+    working-directory: ./
+
 jobs:
   publish-package:
     runs-on: ubuntu-latest
+    name: To Artifactory
+
     steps:
       - name: Harden runner
-        uses: step-security/harden-runner@0634a2670c59f64b4a01f0f96f84700a4088b9f0
+        uses: step-security/harden-runner@0634a2670c59f64b4a01f0f96f84700a4088b9f0 # v2.12.0
         with:
           egress-policy: audit
 
       - name: Checkout code
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           fetch-depth: 0
-
-      - name: Setup Node.js
-        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
-        with:
-          node-version: 'lts/*'
-
-      - name: Set git identity
-        run: |
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git config user.name  "github-actions[bot]"
 
       - name: Run semantic-release
         uses: mridang/action-semantic-release@v1
