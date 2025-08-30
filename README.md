@@ -16,6 +16,7 @@ helm install dummy example/dummy
 <!-- render.chart.valuesTable -->
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| foobar | int | `1` |  |
-| replicaCount | int | `1` |  |
+| podAnnotations | object | `{}` | Extra pod annotations |
+| podLabels | object | `{}` | Common pod labels |
+| replicaCount | int | `1` | Number of replicas to deploy |
 <!-- end.chart.valuesTable -->
