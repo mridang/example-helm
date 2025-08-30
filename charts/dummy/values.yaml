@@ -1,2 +1,8 @@
+# -- Number of replicas to deploy
 replicaCount: 1
-foobar: 1
+
+# -- Common pod labels
+podLabels: {}
+
+# -- Extra pod annotations
+podAnnotations: {}
