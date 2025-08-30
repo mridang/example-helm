@@ -14,5 +14,8 @@ helm install dummy example/dummy
 ### Values
 
 <!-- render.chart.valuesTable -->
-(any content here will be replaced)
+| Key | Type | Default | Description |
+|-----|------|---------|-------------|
+| foobar | int | `1` |  |
+| replicaCount | int | `1` |  |
 <!-- end.chart.valuesTable -->
