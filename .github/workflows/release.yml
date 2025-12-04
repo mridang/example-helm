@@ -32,9 +32,10 @@ jobs:
           fetch-depth: 0
 
       - name: Run semantic-release
-        uses: mridang/action-semantic-release@v1
+        uses: mridang/action-semantic-release@v2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-key: ${{ secrets.DEPLOY_KEY }}
           allow-force-install: 'true'
         env:
           OCI_USERNAME: ${{ github.actor }}
